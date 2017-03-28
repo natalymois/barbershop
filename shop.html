@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--чтобы девайс 'увидел' адаптивную верстку-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
   <link rel="stylesheet" href="css/style.css"/>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-  <title>Барбершоп товары</title>
+  <title>Барбершоп магазин</title>
 </head>
 
 <body>
@@ -13,21 +14,12 @@
     <div class="centerfix">
       <nav class="main-navigation">
         <ul>
-          <li>
-            <a href="#">Информация</a>
-          </li>
-          <li>
-            <a href="#">Новости</a>
-          </li>
-          <li>
-            <a href="#">Прайс-лист</a>
-          </li>
-          <li>
-            <a href="#">Магазин</a>
-          </li>
-          <li>
-            <a href="#">Контакты</a>
-          </li>
+          <li><a href="index.html"><img src="img/logo.png" alt="главная"></a></li>
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Новости</a></li>
+          <li><a href="#">Прайс-лист</a></li>
+          <li><a href="#">Магазин</a></li>
+          <li><a href="#">Контакты</a></li>
         </ul>
       </nav>
       <div class="user-block">
@@ -50,27 +42,27 @@
       <form action="" class="shop-filters">
         <fieldset class="filter-check">
           <legend>ПРОИЗВОДИТЕЛИ</legend>
-          <input type="checkbox" name="" value="" id="filt1">
-          <label for="filt1">Baxter of California</label>
-          <input type="checkbox" name="" value="" id="filt2">
-          <label for="filt2">Mr Natty</label>
-          <input type="checkbox" name="" value="" id="filt3">
-          <label for="filt3">Suavecito</label>
-          <input type="checkbox" name="" value="" id="filt4">
-          <label for="filt4">Malin+Goetz</label>
-          <input type="checkbox" name="" value="" id="filt5">
-          <label for="filt5">Murray’s</label>
-          <input type="checkbox" name="" value="" id="filt6">
-          <label for="filt6">American Crew</label>
+          <input type="checkbox" name="brand" value="brand1" id="brand1">
+          <label for="brand1">Baxter of California</label>
+          <input type="checkbox" name="brand" value="brand2" id="brand2">
+          <label for="brand2">Mr Natty</label>
+          <input type="checkbox" name="brand" value="brand3" id="brand3">
+          <label for="brand3">Suavecito</label>
+          <input type="checkbox" name="brand" value="brand4" id="brand4">
+          <label for="brand4">Malin+Goetz</label>
+          <input type="checkbox" name="brand" value="brand5" id="brand5">
+          <label for="brand5">Murray’s</label>
+          <input type="checkbox" name="brand" value="brand6" id="brand6">
+          <label for="brand6">American Crew</label>
         </fieldset>
         <fieldset class="filter-check">
           <legend>Группы товаров</legend>
-          <input type="radio" name="" value="" id="filt7">
-          <label for="filt7">Бритвенные принадлежности</label>
-          <input type="radio" name="" value="" id="filt8">
-          <label for="filt8">Средства для ухода</label>
-          <input type="radio" name="" value="" id="filt9">
-          <label for="filt9">Аксессуары</label>
+          <input type="radio" name="goods1" value="goods1" id="goods1">
+          <label for="goods1">Бритвенные принадлежности</label>
+          <input type="radio" name="goods2" value="goods2" id="goods2">
+          <label for="goods2">Средства для ухода</label>
+          <input type="radio" name="goods3" value="goods3" id="goods3">
+          <label for="goods3">Аксессуары</label>
         </fieldset>
         <a href="#" class="btn">Показать</a>
       </form>

@@ -75,7 +75,7 @@ a:hover, a:focus, a:active {
 	text-decoration: /* NOTE:  */;
 }
 h1, h2, h3, h4, h5, h6{
-	font-weight:normal;
+	font-weight:bold;
 }
 img{
 	max-width:100%;
@@ -88,9 +88,7 @@ img{
 /* --------------- /базовые настройки ---------*/
 
 .main-header{
-	background: #000;
-	top: 0;
-	width: 100%;
+	background-color: #000;
 }
 	.main-header a{
 		color: inherit;
@@ -104,12 +102,17 @@ img{
 	    max-width:940px;
 			padding: 0 10px;
 	  }
-	.main-header *{
+	.main-header .centerfix{
 		display: flex;
 		justify-content: space-between;
+		/*flex-wrap: wrap;*/
+		}
+	.main-header .centerfix *{
+		display: flex;
 	}
 		.main-navigation ul {
 			font-weight: 600;
+			justify-content: space-between;
 		}
 
 		.user-block .login{
@@ -131,7 +134,7 @@ img{
 			.login:hover::before {
 		  	opacity: 1;
 		}
-.main {
+.main-block {
 	margin-top: 70px;
 	padding-top: 60px;
 }
@@ -200,16 +203,25 @@ img{
 				.main-content-left ul li time {
 					text-transform: none;
 				}
-			.main-content-left .btn,
-			.main-content-right .btn {
+				button {
+					text-transform: uppercase;
+					font-family: 'PT Sans Narrow', sans-serif;
+					font-weight: 600;
+					margin: 0;
+					padding: 0;
+					border: 0;
+				}
+			.btn {
 				display: block;
 				width: 140px;
 				background-color: #000;
 				color: #fff;
 				text-align: center;
 				font-size: 14px;
-				padding-top: 15px;
-				padding-bottom: 15px;
+				padding: 16px 0;
+			}
+			.main-content-left .btn {
+				padding: 13px 0;
 			}
 			.main-content a:hover,
 			 .main-content button:hover{
@@ -261,11 +273,14 @@ img{
 					display: block;
 					background-color: #000;
 					color: #fff;
+					padding: 0;
+					border: 0;
 					text-align: center;
 					text-transform: uppercase;
+					font-family: 'PT Sans Narrow', sans-serif;
+					font-weight: 600;
 					font-size: 14px;
-					padding-top: 15px;
-					padding-bottom: 15px;
+					padding: 16px 0;
 				}
 	.main-footer {
 		background-color: #252525;
@@ -273,6 +288,7 @@ img{
 		.main-footer > .centerfix {
 			display: flex;
 			justify-content: space-between;
+			flex-wrap: wrap;
 			font-size: 14px;
 			font-weight: 600;
 			padding: 40px 0;
@@ -297,10 +313,11 @@ img{
 				display: flex;
 				justify-content: space-between;
 			}
-			.main-footer .btn {
+			.footer-copyright .btn {
 				display: inline-block;
 				margin-top: 20px;
-				padding: 12px 20px;
+				padding: 10px 0;
+				width: 100%;
 				background: #000;
 				color: #fff;
 				text-align: center;
@@ -327,9 +344,46 @@ img{
 				.social-btn-inst {
 					background: #000 url(../img/inst.png) no-repeat center;
 				}
-@media screen and (max-width:860px) {
-	.main-navigation {
-		width: 85%;
+@media screen and (max-width:700px) {
+	.main-header a{
+		padding: 20px 15px;
 	}
+	.login::before {
+		top: 23px;
+	}
+}
 
+@media screen and (max-width:680px){
+	.main-content-right input {
+		width: 96%;
+		height: 40px;
+		margin-bottom: 5px;
+	}
+}
+
+@media screen and (max-width:640px) {
+	.main-header .centerfix {
+		flex-wrap: wrap;
+	}
+	.main-header a{
+		padding: 15px 10px;
+	}
+	.login::before {
+		top: 18px;
+	}
+	.main-block {
+		margin-top: 10px;
+		padding-top: 10px;
+	}
+	.main-content-title {
+		font-size: 30px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	.main-content-left ul li,
+	.main-content-left > p,
+	.main-content-right p{
+		line-height: 1.2;
+		margin-bottom: 10px;
+	}
 }
