@@ -13,21 +13,12 @@
     <div class="centerfix">
       <nav class="main-navigation">
         <ul>
-          <li>
-            <a href="#">Информация</a>
-          </li>
-          <li>
-            <a href="#">Новости</a>
-          </li>
-          <li>
-            <a href="#">Прайс-лист</a>
-          </li>
-          <li>
-            <a href="#">Магазин</a>
-          </li>
-          <li>
-            <a href="#">Контакты</a>
-          </li>
+          <li><a href="index.html"><img src="img/logo.png" alt="главная"></a></li>
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Новости</a></li>
+          <li><a class="current" href="#">Прайс-лист</a></li>
+          <li><a href="shop.html">Магазин</a></li>
+          <li><a href="#">Контакты</a></li>
         </ul>
       </nav>
       <div class="user-block">
@@ -36,35 +27,31 @@
     </div>
   </header>
 <!--Основной блок-->
-<div class="wrapper">
+<div class="block-inner">
   <div class="centerfix">
     <h2>прайс-лист</h2>
-    <div id="breadcrumbs">
-    	<ul>
-    		<li><a href="#">главная</a></li>
-        <li><a href="#">прайс-лист</a></li>
-    	</ul>
-    </div>
+    <ul class="breadcrumbs">
+      <li><a href="index.html">ГЛАВНАЯ</a></li>
+      <li class="inactive">ПРАЙС-ЛИСТ</li>
+    </ul>
     <div class="price-title">
-      <hr align="center" width="160" color=#000>
       <h1>ИСТИННО МУЖСКАЯ КЛАССИКА</h1>
-      <hr align="center" width="160" color=#000>
     </div>
-    <div class="price-block">
-      <section class="price-left">
-        <h3>МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:</h3>
-        <ul class="rhomb">
+    <div class="content-block">
+      <section class="block-left">
+        <h3>МЫ ИСПОЛЬЗУЕМ ТОЛЬКО<br> ЛУЧШИЕ СРЕДСТВА:</h3>
+        <ul>
           <li>Baxter of California</li>
           <li>Mr Natty</li>
           <li>Suavecito</li>
           <li>Malin+Goetz</li>
         </ul>
       </section>
-      <section class="price-right">
-        <h3>ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:</h3>
+      <section class="block-right">
+        <h3>ЦЕНЫ НА УСЛУГИ<br> НАШИХ МАСТЕРОВ:</h3>
         <table>
-          <col class="tab1">
-          <col class="tab2">
+          <col align="left">
+          <col align="center">
           <tr>
             <td>стрижка</td>
             <td>1500 р.</td>
@@ -80,12 +67,13 @@
         </table>
       </section>
     </div>
-    <div class="price-block">
+    <div class="about">
       <h3>НЕСКОЛЬКО СЛОВ О НАС:</h3>
-      <p class="price-left">
+      <div class="content-block">
+      <p class="block-left">
         Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа.
       </p>
-      <p class="price-right">
+      <p class="block-right">
         Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно.
       </p>
     </div>
@@ -107,8 +95,13 @@
         <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
       </section>
       <section class="footer-copyright">
-        <p>Разработано:</p>
-        <a class="btn" href="https://htmlacademy.ru">HTML Academy</a>
+        <div class="creator">
+          <p>Разработано:</p>
+          <a class="btn" href="https://htmlacademy.ru">HTML Academy</a></div>
+        <div class="executor">
+          <p>Сверстано:</p>
+          <a class="btn" href="https://github.com/natalymois" target="_blank">Natalia Moiseeva</a>
+        </div>
       </section>
     </div>
   </footer>
