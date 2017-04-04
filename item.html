@@ -6,28 +6,21 @@
   <link rel="stylesheet" href="css/style.css"/>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
   <title>Барбершоп-item</title>
+  <script src="js/jquery.js" type="text/javascript" ></script>
+  <script src="js/gallery.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="inner">
   <header class="main-header">
     <div class="centerfix">
       <nav class="main-navigation">
         <ul>
-          <li>
-            <a href="#">Информация</a>
-          </li>
-          <li>
-            <a href="#">Новости</a>
-          </li>
-          <li>
-            <a href="#">Прайс-лист</a>
-          </li>
-          <li>
-            <a href="#">Магазин</a>
-          </li>
-          <li>
-            <a href="#">Контакты</a>
-          </li>
+          <li><a href="index.html"><img src="img/logo.png" alt="главная"></a></li>
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Новости</a></li>
+          <li><a href="price-list.html ">Прайс-лист</a></li>
+          <li><a class="current" href="#">Магазин</a></li>
+          <li><a href="#">Контакты</a></li>
         </ul>
       </nav>
       <div class="user-block">
@@ -36,23 +29,21 @@
     </div>
   </header>
 <!--Основной блок-->
-  <div class="wrapper">
+  <div class="block-inner">
     <div class="centerfix">
       <h1 class="item-title">набор для путешествий «Baxter of California»</h1>
-      <div id="breadcrumbs">
-      	<ul>
-      		<li><a href="#">главная</a></li>
-          <li><a href="#"></a>магазин</li>
-          <li><a href="#"></a>средства для ухода</li>
-          <li><a href="#"></a>набор для путешествий «Baxter of California»</li>
+        <ul class="breadcrumbs">
+          <li><a href="index.html">ГЛАВНАЯ</a></li>
+          <li><a href="shop.html">МАГАЗИН</a></li>
+          <li><a href="#">СРЕДСТВА ДЛЯ УХОДА</a></li>
+          <li>набор для путешествий «Baxter of California»</li>
       	</ul>
-      </div>
-      <div class="item-content">
+      <div class="content-block">
         <section class="item-gallery">
-          <figure id="item-big">
+          <figure class="item-big">
             <img src="img/product-n3.jpg" width="460" height="500" alt="Старт" />
           </figure>
-          <div id="item-small">
+          <div class="item-small">
             <a href="img/product-n1.jpg"><img src="img/product-n1_mini.jpg" width="140" height="149" alt="Миниатюра 1" /></a>
             <a href="img/product-n2.jpg"><img src="img/product-n2_mini.jpg" width="140" height="149" alt="Миниатюра 2" /></a>
             <a href="img/product-n3.jpg"><img src="img/product-n3_mini.jpg" width="140" height="149" alt="Миниатюра 3" /></a>
@@ -60,14 +51,16 @@
         </section>
         <section class="item-description">
           <div class="inform">
-            <p class="presence">есть в наличие</p>
-            <p class="article">Артикул: dexter-ae</p>
+            <p>есть в наличие</p>
+            <p class="inactive">Артикул: dexter-ae</p>
           </div>
           <p class="item-text">
             Travel Kit – необходимый аксессуар во время любого путешествия. В аккуратной кожаной сумке находится все, что нужно для бритья и ухода за кожей во время рабочей поездки или отдыха: средство для умывания, увлажняющий крем, крем для бритья, крем после бритья, шампунь. Набор также может
           </p>
-          <div class="item-price">2900&nbsp;руб.</div>
-          <button class="item-btn">купить</button>
+          <div class="price-block">
+            <div class="price">2 900&nbsp;руб.</div>
+            <button class="btn">Купить</button>
+          </div>
           <h2>в набор входят:</h2>
           <ul class="list-description">
             <li>Средство для умывания (50 мл)</li>
@@ -97,8 +90,13 @@
         <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
       </section>
       <section class="footer-copyright">
-        <p>Разработано:</p>
-        <a class="btn" href="https://htmlacademy.ru">HTML Academy</a>
+        <div class="creator">
+          <p>Разработано:</p>
+          <a class="btn" href="https://htmlacademy.ru">HTML Academy</a></div>
+        <div class="executor">
+          <p>Сверстано:</p>
+          <a class="btn" href="https://github.com/natalymois" target="_blank">Natalia Moiseeva</a>
+        </div>
       </section>
     </div>
   </footer>
