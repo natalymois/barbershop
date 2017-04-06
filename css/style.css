@@ -362,14 +362,14 @@ img{
 		  width: 300px;
 		  margin-left: -230px;
 		  padding: 50px 80px;
-		  color: #000000;
+		  color: #000;
 		  background: #f8f3f0 url("img/bg-pattern.jpg");
 		  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
 		}
 		.modal-content-map {
 		  position: fixed;
 		  top: 50%;
-		  left: 50%;
+		  left: 60%;
 		  display: none;
 		  width: 766px;
 		  height: 561px;
@@ -434,10 +434,10 @@ img{
 			font-weight: 700;
 		  line-height: 24px;
 		  font-family: "PT Sans Narrow", "Arial", sans-serif;
-		  color: #000000;
+		  color: #000;
 		  text-transform: uppercase;
 		  background-color: #f9f6f3;
-		  border: 2px solid #000000;
+		  border: 2px solid #000;
 		  outline: none;
 		}
 		.login-form input:focus {
@@ -565,65 +565,93 @@ img{
 				margin-bottom: 25px;
 			}
 				.shop-filters ul {
-					margin-bottom: 40px;
+					margin-bottom: 50px;
 					font-weight: 700;
-					margin-left: 40px;
+					margin-left: 0;
 				}
 					.shop-filters ul li {
 						position: relative;
 						margin-bottom: 10px;
-						line-height: 1.3;
+						line-height: 1.8;
 					}
-				.shop-filters input {
+
+				/*---Стилизованные чекбоксы в форме выбора призводителей---*/
+				.filters-checkbox input[type="checkbox"] {
 					display: none;
 				}
-				.shop-filters button:hover {
-					background: #663d15;
+				.filters-checkbox {
+					position: relative;
+					padding-left: 40px;
 					cursor: pointer;
 				}
-					input[type="checkbox"] ~ label::before {
-						content: "";
+				.filters-checkbox:hover {
+					color: #663d15;
+				}
+					.filters-checkbox input[type="checkbox"] + .checkbox-indicator {
 						position: absolute;
-						top: 0;
-						left: -40px;
-						z-index: 1;
-						width: 15px;
-						height: 15px;
-						border: 3px solid #000;
+						top: -1px;
+						left: 0;
+						width: 17px;
+						height: 17px;
+						border: 2px solid #000000;
 					}
-					input[type="radio"] ~ label::before {
-						content: "";
-						position: absolute;
-						top: 0;
-						left: -40px;
-						z-index: 1;
-						width: 15px;
-						height: 15px;
-						border: 3px solid #000;
-						border-radius: 50%;
-					}
-						input[type="checkbox"]:checked ~ label::before {
-							content: "x";
-							text-align: center;
-							font-size: 20px;
-							font-family: 'Arial',sans-serif;
-						}
-						input[type="radio"]:checked ~ label::after {
+						.filters-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before,
+						.filters-checkbox input[type="checkbox"]:checked + .checkbox-indicator::after {
 							content: "";
 							position: absolute;
-							top: 6px;
-							left: -34px;
-							z-index: 1;
-							width: 8px;
-							height: 8px;
-							background-color: #000;
-							border-radius: 50%;
-							opacity: 1;
+							top: 7px;
+							left: 1px;
+							width: 15px;
+							height: 2px;
+							background-color: #000000;
 						}
-						input ~ label:hover {
-							color: #663d15;
-							cursor: pointer;
+						.filters-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before {
+							transform: rotate(45deg);
 						}
+						.filters-checkbox input[type="checkbox"]:checked + .checkbox-indicator::after {
+							transform: rotate(-45deg);
+						}
+					/*-------Конец стилизации чекбоксов--------*/
+
+				.shop-filters input[type="radio"] {
+					display: none;
+				}
+				.filters-checkbox input[type="radio"] + .radio-indicator {
+				  position: absolute;
+				  top: -1px;
+				  left: 0;
+				  width: 17px;
+				  height: 17px;
+				  border: 2px solid #000;
+				  border-radius: 50%;
+				}
+				.filters-checkbox input[type="radio"] + .radio-indicator::after {
+				  content: "";
+				  position: absolute;
+				  top: 0;
+				  left: 0;
+				  width: 17px;
+				  height: 17px;
+				  background-color: #000;
+					border-radius: 50%;
+				  opacity: 0;
+				  transition-property: transform;
+				  transition-duration: 0.28s;
+				}
+
+				.filters-checkbox input[type="radio"]:checked + .radio-indicator::after {
+				  transform: scale(0.5);
+				  opacity: 1;
+				}
+
+			input ~ label:hover {
+				color: #663d15;
+				cursor: pointer;
+			}
+			.shop-filters button:hover {
+				background: #663d15;
+				cursor: pointer;
+			}
 		.catalog-item {
 			display: flex;
 			justify-content: space-between;
