@@ -31,5 +31,13 @@ $(function(){
    $('.modal-content-close').click(function(e){
 	  $('.modal-content-map').css('display','none');
    });
-});
    
+  /* $('body').click(function(e) {
+
+    if($(e.target).closest('.modal-content-map').length==0) {
+	$('.modal-content-map').css('display','none');
+   }
+});*/
+ 
+});
+  
