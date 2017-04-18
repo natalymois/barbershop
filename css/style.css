@@ -120,8 +120,20 @@ img{
 		display: flex;
 		justify-content: space-between;
 	}
+		.main-header .centerfix{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			        justify-content: space-between;
+			-ms-flex-wrap: wrap;
+			    flex-wrap: wrap;
+		}
+
 		.main-navigation ul {
 			font-weight: 600;
+
 		}
 			.main-navigation ul .current {
 				border-bottom: 5px solid #fff;
@@ -579,7 +591,7 @@ img{
 						line-height: 1.8;
 					}
 
-				/*---Стилизованные чекбоксы в форме выбора призводителей---*/
+				/*---Стилизованные чекбоксы в форме выбора производителей---*/
 				.filters-checkbox input[type="checkbox"] {
 					display: none;
 				}
@@ -720,10 +732,30 @@ img{
 				}
 
 		/* --------------- price-list ---------*/
-	.price-title {
-		display: block;
-		margin: 50px auto 0;
+	.big-heading {
+		margin-top: 55px;
+		margin-bottom: 65px;
+		text-align: center;
 	}
+		.big-heading h2 {
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+			margin:  0;
+			padding: 0 25px;
+			font-size: 48px;
+			line-height: 48px;
+			text-align: center;
+			background: #f8f3f0 url("../img/bg-pattern.jpg");
+		}
+		.big-heading::after {
+			content:  "";
+			position: relative;
+			top: -25px;
+
+			display: block;
+			border-bottom: 2px solid #000;
+		}
 	.content-block {
 		display: flex;
 		justify-content: space-between;
@@ -831,6 +863,12 @@ img{
 					}
 
 				}
+
+/*@media screen and (max-width:845px) {
+	.main-header a{
+		padding: 15px 10px;
+	}
+}*/
 
 @media screen and (max-width:700px) {
 	.main-header a{
