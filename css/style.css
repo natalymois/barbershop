@@ -1,64 +1,8 @@
- /* --------------- reset.css --------------- */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;                               /* обнуляем отступы и убираем бордюры */
-	vertical-align: baseline;          /* приводим все к одной базовой линии */
-	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
-	font-size: 100%;                     /* размер шрифта всем одинаковый */
-}
-a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
-	margin:0;
-	padding:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent;
-	outline:none;
-}
-table {						/* устраняем отступы между ячейками таблицы */
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-td, td img {
-	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
-}
-input, select, button, textarea {
-	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
-	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
-	outline: none;
-}
-input[type="password"] {
-	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
-}
-input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
-	vertical-align: bottom;
-}
-input[type="radio"] {
-	vertical-align: text-bottom;
-}
-sub {
-	vertical-align: sub;
-	font-size: smaller;
-}
-sup {
-	vertical-align: super;
-	font-size: smaller;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display:block;
-}
-nav ul {
-	 list-style:none;
-}
-/* --------------- /reset.css --------------- */
-
-/* --------------- базовые настройки ---------*/
 html {
 	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
 }
 body {
-	font-family: 'PT Sans Narrow', 'Arial', sans-serif; /*font-family: 'Droid Sans', sans-serif;*/
+	font-family: 'PT Sans Narrow', 'Arial', sans-serif;
 	background: #070707 url("../img/body.jpg") no-repeat center top;
 	color: #fff;
 	text-transform: uppercase;
@@ -87,20 +31,16 @@ h1, h2, h3, h4, h5, h6{
 }
 img{
 	max-width:100%;
-}
-/*.clearfix:after {
-    clear: both;
-    content: "";
-    display: table;*/
+	object-fit: contain;
 }
 /* --------------- /базовые настройки ---------*/
 
 .main-header {
 	background-color: #000;
-}
-/*это не описка - просто без повтора почему-то не работает черный цвет хедера*/
-.main-header {
-	background-color: #000;
+	position: fixed;
+	top: 0;
+  width: 100%;
+  z-index: 20;
 }
 	.main-header a{
 		color: inherit;
@@ -120,30 +60,176 @@ img{
 		display: flex;
 		justify-content: space-between;
 	}
-		.main-header .centerfix{
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-			-webkit-box-pack: justify;
-			    -ms-flex-pack: justify;
-			        justify-content: space-between;
-			-ms-flex-wrap: wrap;
-			    flex-wrap: wrap;
-		}
+	.main-header .centerfix{
+		position: relative;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	.main_page {
+	  display: none;
+	}
+	.logo_header > a {
+		padding-left: 10px;
+	}
+	.toggle {
+		display: block;
+	}
 
+	/*---медиа-меню---*/
+	.hidden-menu {
+		width: calc(100% - 150px);
+		position: relative;
+		display: none;
+	  padding-left: 40px;
+	  text-decoration: none;
+		font-size: 16px;
+		line-height: 24px;
+		font-family: 'Roboto', 'Arial', sans-serif;
+	}
+	.main-header.page .hidden-menu {
+		width: calc(100% - 281px);
+		position: initial;
+		padding-left: 0;
+	}
+	.hidden-menu .mobi-hover {
+		height: 100%;
+	  padding: 0;
+		padding-right: 50px;
+	  text-decoration: none;
+	  align-items: center;
+	  color: #fff;
+	  line-height: 16px;
+	  position: relative;
+	  display: inline-block;
+	  -webkit-transition: color .5s linear;
+	  transition: color .5s linear;
+	  cursor: pointer;
+	}
+	.hidden-menu .mobi-hover:hover {
+		background: #000
+	}
+	.main-header.page .mobi-hover {
+		margin-left: 15%;
+	}
+		.mobi-hover .icon {
+			top: 10px;
+	    left: 15px;
+	    position: absolute;
+		}
+		.mobi-hover .icon > span {
+			display: inline-block;
+	    width: 20px;
+	    box-sizing: border-box;
+	    height: auto;
+	    border-bottom: 3px solid #fff;
+	    border-top: 3px solid #fff;
+	    position: relative;
+	    padding: 6px;
+	    margin-top: 40%;
+			transition: all .5s ease;
+	    transition-delay: 0.1s;
+		}
+			.mobi-hover .icon > span::before {
+		    content: "";
+		    position: absolute;
+		    width: 20px;
+		    background: #fff;
+		    height: 3px;
+		    top: 35%;
+		    margin-left: -30%;
+				transition: all .5s ease;
+		    transition-delay: 0.1s;
+			}
+	.hidden-menu .drop-menu {
+		flex-wrap: wrap;
+		width: calc(100% + 30px);
+    position: absolute;
+    font-weight: 400;
+    top: 100%;
+    left: 40px;
+    list-style: none;
+    transform: rotateX(90deg);
+    transform-origin: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease;
+    transition-delay: 0.1s;
+    z-index: 5;
+	}
+	.main-header.page .hidden-menu .drop-menu {
+		width: 96%;
+		left: 2%;
+		padding-left: 0;
+		margin: 0;
+	}
+	.drop-menu li {
+		width: 100%;
+    color: #fff;
+    background: #000;
+    border-bottom: 1px solid #fff;
+    box-shadow: 1px 1px #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+	}
+	.main-header.page .drop-menu li {
+		background-color: #4e4d4d;
+		color: #fff;
+	}
+	.drop-menu li a {
+		width: 100%;
+		padding: 10px 20px;
+	}
+	.main-header.page .drop-menu li a {
+		padding: 8px 30px;
+	}
+	.drop-menu li:hover {
+		color: #fff;
+	}
+	.main-header.page .drop-menu li:hover a {
+		background: #f8f4f1;
+		color: #000;
+	}
+	/*выпадение меню при клике*/
+	.mobi-hover.open .icon {
+    top: 15px;
+    left: 20px;
+	}
+	.mobi-hover.open .icon > span {
+		border-bottom: none;
+    transform: rotate(45deg) translateX(-6px) translateY(13px);
+	}
+	.mobi-hover.open .icon > span::before {
+		transform: rotate(90deg);
+    top: -3px;
+	}
+	.mobi-hover.open + .drop-menu {
+		transform: rotateX(0deg);
+    opacity: 1;
+    visibility: visible;
+	}
 		.main-navigation ul {
 			font-weight: 600;
+			padding-left: 0;
 
 		}
 			.main-navigation ul .current {
 				border-bottom: 5px solid #fff;
 				padding-bottom: 20px;
 			}
+	.user-block {
+		width: 110px;
+	}
 		.user-block .login{
 			position: relative;
 			padding-left: 50px;
 			display: inline-block;
-			margin-right: 20px;
+			align-self: center;
 		}
 			.login::before {
 				content: "";
@@ -163,30 +249,30 @@ img{
 }
 	.main-logo {
 		width: 370px;
-		margin: 0 auto;
+		margin: 80px auto 0;
 	}
-	section.features {
+	.features {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 80px;
+		margin-bottom: 100px;
 	}
-		.features-item {
-			width: 31%;
-			text-align: center;
+	.features-item {
+		width: 31%;
+		text-align: center;
+	}
+	.features-name {
+		font-size: 30px;
+		font-weight: 700;
+	}
+	.rhomb {
+		width: 0;
+		margin: 15px auto 25px;
+		border: 10px solid #fff;
+	  transform: rotate(45deg);
+	}
+		.features-item p {
+			line-height: 2;
 		}
-		.features-name {
-			font-size: 30px;
-			font-weight: 700;
-		}
-		.rhomb {
-			width: 0;
-			margin: 15px auto 25px;
-			border: 10px solid #fff;
-		  transform: rotate(45deg);
-		}
-			.features-item p {
-				line-height: 2;
-			}
 	.main-content {
 		display: flex;
 		justify-content: space-between;
@@ -250,8 +336,41 @@ img{
 				background: #663d15;
 			}
 
-				.gallery-content img{
-					margin: 10px 7px 25px;
+				.gallery-content {
+					margin: 10px 0 25px;
+					position: relative;
+					height: 170px;
+				}
+				.gallery-content .slide {
+					position: absolute;
+					left: 0px;
+					top: 0px;
+					width: 100%;
+					height: 100%;
+					opacity: 0.1;
+					z-index: 1;
+					background-size: cover;
+					-webkit-transition: opacity 1s;
+					-moz-transition: opacity 1s;
+					-o-transition: opacity 1s;
+					transition: opacity 1s;
+				}
+				.slide.showing{
+					opacity: 1;
+					z-index: 2;
+				}
+			.gallery-content 	.slide:nth-of-type(1) {
+				background: transparent url('../img/photo-1.jpg');
+			}
+			.gallery-content 	.slide:nth-of-type(2) {
+				background: transparent url('../img/photo-2.jpg');
+			}
+			.gallery-content 	.slide:nth-of-type(3) {
+				background: transparent url('../img/photo-3.jpg');
+			}
+				.gallery-content img {
+					object-fit: cover;
+					width: 100%;
 				}
 				.block-btn {
 					display: flex;
@@ -302,6 +421,7 @@ img{
 					font-weight: 700;
 					padding: 16px 0;
 				}
+	/*---footer---*/
 	.main-footer {
 		background-color: #252525;
 		box-shadow: inset 0 5px 10px 3px #000;
@@ -311,9 +431,9 @@ img{
 			justify-content: space-between;
 			flex-wrap: wrap;
 			font-weight: 700;
-			padding: 40px 0;
+			padding: 30px 5px;
 		}
-			.footer-contacts {
+			.footer {
 				width: 33%;
 			}
 				.footer-contacts a {
@@ -324,14 +444,17 @@ img{
 						text-decoration:none;
 					}
 			.footer-social {
-				width: 33%;
 				text-align: center;
 			}
 			.footer-copyright {
-				width: 33%;
 				text-align: center;
 				display: flex;
 				justify-content: space-between;
+				flex-wrap: wrap;
+    		overflow: hidden;
+			}
+			.footer-copyright .executor {
+				width: 50%;
 			}
 			.footer-copyright .btn {
 				display: inline-block;
@@ -367,7 +490,7 @@ img{
 
 		/* Всплывающая форма в index.html*/
 		.modal-content {
-		  position: absolute;
+		  position: fixed;
 		  top: 120px;
 		  left: 50%;
 		  display: none;
@@ -382,21 +505,20 @@ img{
 		.modal-content-map {
 		  position: fixed;
 		  top: 50%;
-		  left: 60%;
+		  left: 0;
 		  display: none;
-		  width: 58%;
-		  height: 78%;
-		  margin-top: -280px;
-		  margin-left: -390px;
-		  background: #e9e5dc url("../img/map.jpg");
-		  border: 7px solid white;
+		  width: 80%;
+		  margin-top: -225px;
+		  margin-left: 10%;
+		  background: #fff;
+		  border: 2px solid white;
 		  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
-			z-index: 2;
+			z-index: 20;
 		}
 		.modal-content-close {
 		  position: absolute;
-		  top: 0;
-		  right: -34px;
+			top: 10px;
+    	right: 25px;
 		  width: 22px;
 		  height: 22px;
 		  font-size: 0;
@@ -413,7 +535,7 @@ img{
 		  left: 2px;
 		  width: 19px;
 		  height: 3px;
-		  background-color: #d0d0d0;
+		  background-color: #000;
 		  border-radius: 1px;
 		}
 		.modal-content-close::before {
@@ -427,14 +549,15 @@ img{
 		  margin-bottom: 20px;
 		  font-size: 30px;
 		  line-height: 42px;
+			text-align: center;
 		}
 		.modal-content p {
 		  margin: 0;
-		  margin-bottom: 14px;
+		  text-align: center;
 			font-weight: 700;
 		}
 		.modal-content .login-form {
-		  margin-top: 30px;
+		  margin-top: 20px;
 		  margin-bottom: 10px;
 		}
 		.login-form input[type="text"],
@@ -470,13 +593,14 @@ img{
 		.login-form a {
 		  float: right;
 		  color: #000;
+			text-decoration: underline;
 		}
 		.login-form a:visited {
 			background: #f8f3f0 url("img/bg-pattern.jpg");
 		}
 			.login-form a:hover {
-				color: #fff;
-				background-color:#000;
+				color: #663d15;
+				text-decoration: none;
 			}
 		.login-form .btn {
 		  width: 100%;
@@ -518,11 +642,31 @@ img{
 		.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::after {
 		  transform: rotate(-45deg);
 		}
+		.field-reg {
+	    display: block;
+			width: 100%;
+			margin-top: 10px;
+			text-align: center;
+	    text-transform: uppercase;
+	    cursor: pointer;
+			font-weight: bold;
+		}
+		.field-reg span {
+			margin: 0 auto;
+			text-decoration: underline;
+		}
+		.field-reg:hover{
+			background: inherit;
+		}
+		.field-reg:hover span {
+			color: #663d15;
+			text-decoration: none;
+		}
 
    /* --------------- shop ---------*/
 	.block-inner {
 		color: #000;
-		padding-top: 50px;
+		padding-top: 110px;
 	}
 		.block-inner a {
 			color: #000;
@@ -564,8 +708,9 @@ img{
 				height: 8px;
 				background-color: #000;
 				-webkit-transform: rotate(45deg);
-								transform: rotate(45deg);
+					transform: rotate(45deg);
 			}
+
 	.catalog {
 		display: flex;
 		justify-content: space-between;
@@ -577,21 +722,53 @@ img{
 		.catalog-item {
 			width: 74%;
 		}
+		aside .shop-filters {
+			display: flex;
+			flex-direction: column;
+		}
+		aside .shop-filters fieldset {
+			border: none;
+			padding-bottom: 0;
+			padding-left: 0;
+			width: 49%;
+			box-sizing: border-box;
+		}
 			aside .shop-filters legend {
-				font-size: 24px;
+				font-size: 22px;
 				font-weight: 700;
-				margin-bottom: 25px;
+				margin-bottom: 10px;
 			}
 				.shop-filters ul {
 					margin-bottom: 50px;
 					font-weight: 700;
 					margin-left: 0;
+					padding-left: 0;
 				}
 					.shop-filters ul li {
 						position: relative;
 						margin-bottom: 10px;
 						line-height: 1.8;
 					}
+		.catalog-item .item span {
+			display: inline-block;
+		}
+		.catalog-item .item p {
+			margin: 0;
+			padding: 0;
+			transition: all 0.5s ease-in-out;
+		}
+		.catalog-item .item p .category {
+			transition: all 0.5s ease-in-out;
+		}
+		.catalog-item .item p:hover {
+			font-size: 18px;
+			font-weight: bolder;
+			color: #663d15;
+		}
+		.catalog-item .item p:hover .category {
+			font-size: 18px;
+			color: #663d15;
+		}
 
 				/*---Стилизованные чекбоксы в форме выбора производителей---*/
 				.filters-checkbox input[type="checkbox"] {
@@ -630,7 +807,7 @@ img{
 							transform: rotate(-45deg);
 						}
 					/*-------Конец стилизации чекбоксов--------*/
-
+					/*---Стилизованные радиокнопки в форме выбора производителей---*/
 				.shop-filters input[type="radio"] {
 					display: none;
 				}
@@ -661,6 +838,7 @@ img{
 				  transform: scale(0.5);
 				  opacity: 1;
 				}
+				/*-------Конец стилизации радиокнопок--------*/
 
 			input ~ label:hover {
 				color: #663d15;
@@ -674,24 +852,29 @@ img{
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
+			text-align: center;
 		}
 			.item {
-				width: 220px;
+				width: 33%;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
-				box-shadow: 0 0 5px 3px #e6e4e1;
+				/*box-shadow: 0 5px 32px 2px #a8a8a8;*/
+				box-shadow: 0 5px 5px 2px #e2e2e2;
 				margin-bottom: 15px;
 				letter-spacing: 0.07em;
+				text-align: center;
 			}
 			.item:hover {
 				box-shadow: 0 0 8px 5px #c1bfbd;
 			}
-				.item span {
+				/*.item span {
 					margin-left: 8%;
-				}
+				}*/
 				.item .category {
 					text-transform: none;
+					font-size: 16px;
+					letter-spacing: -0.2px;
 				}
 				.price-block {
 					width: 84%;
@@ -735,8 +918,8 @@ img{
 
 		/* --------------- price-list ---------*/
 	.big-heading {
-		margin-top: 55px;
-		margin-bottom: 65px;
+		margin-top: 25px;
+		margin-bottom: 0;
 		text-align: center;
 	}
 		.big-heading h2 {
@@ -762,19 +945,23 @@ img{
 		display: flex;
 		justify-content: space-between;
 		font-weight: 700;
-		padding: 5.3% 0;
+		padding: 3% 0 0;
 	}
 		.content-block h3,
 		.about h3 {
-			font-size: 24px;
+			font-size: 22px;
 			line-height: 1.3;
+		}
+		.about h3 {
+			margin: 0
 		}
 			.block-left {
 				width: 40.4%;
 			}
-				.block-left ul {
-					margin: 10px 0;
-				}
+			.block-left ul {
+				margin: 10px 0;
+				padding-left: 0;
+			}
 				.block-left ul li {
 					position: relative;
 					padding: 10px 0 10px 30px;
@@ -796,6 +983,7 @@ img{
 			}
 				.block-right table {
 					margin: 30px 0;
+					border-collapse: collapse;
 				}
 				.block-right table td{
 					width: 228px;
@@ -803,6 +991,24 @@ img{
 					border-collapse: collapse;
 					border-spacing: 0;
 					padding: 10px 15px;
+				}
+				.block-right table tr td:nth-child(1) {
+					text-align: left;
+				}
+				.block-right table tr td:nth-child(2) {
+					text-align: center;
+				}
+				.block-right .entry-button {
+					display: block;
+					width: 100%;
+					background: #000;
+					color: #fff;
+					padding: 10px 0;
+					text-align: center;
+				}
+				.block-right .entry-button:hover {
+					background: #663d15;
+					color: #fff;
 				}
 
 			/* --------------- item ---------*/
@@ -815,6 +1021,7 @@ img{
 		}
 			.item-gallery img {
 				box-shadow: 0 0 5px 3px #e6e4e1;
+				height: auto;
 			}
 			.item-gallery img:hover {
 				box-shadow: 0 0 8px 5px #c1bfbd;
@@ -824,6 +1031,7 @@ img{
 				display: flex;
 				justify-content: space-between;
 				margin-top: 15px;
+				margin-bottom: 15px;
 			}
 			.item-description {
 				width: 40.5%;
@@ -840,6 +1048,15 @@ img{
 					display: flex;
 					justify-content: space-between;
 					margin-bottom: 9%;
+				}
+				.inform p {
+					display: inline-block;
+				}
+				.inform .yes {
+					display: block;
+				}
+				.inform .not {
+					display: none;
 				}
 					.inactive {
 						color: #aba9a7;
@@ -864,21 +1081,82 @@ img{
 										transform: rotate(45deg);
 					}
 
-				}
 
-/*@media screen and (max-width:845px) {
+
+@media screen and (max-width:840px) {
+	.main-header.page li a{
+		padding: 18px 10px 12px;
+	}
+	.main-header.page .login {
+		padding-left: 50px;
+	}
+}
+
+@media screen and (max-width:740px) {
+	.content-block {
+		flex-wrap: wrap;
+	}
+	.block-inner h2 {
+		text-align: center;
+		font-size: 26px;
+		line-height: 26px;
+	}
+	.main-header.page .hidden-menu {
+		display: block;
+	}
+	.main-header.page .main-navigation {
+		display: none;
+	}
+	.main-header.page .mobi-hover .icon {
+    top: 20px;
+	}
+	.modal-content-map {
+    width: 90%;
+    margin-left: 5%;
+    height: 400px;
+    overflow: hidden;
+	}
+	aside {
+    width: 190px;
+	}
+	.catalog-item .item {
+		width: 49%;
+	}
+	.big-heading h2 {
+		font-size: 40px;
+		line-height: 40px;
+	}
+	.about h3 {
+    margin-top: 20px;
+    padding-left: 10%;
+	}
+	.breadcrumbs {
+		text-align: center;
+	}
+	.item-gallery, .item-description {
+    width: 97%;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+	}
+}
+
+@media screen and (max-width:694px) {
 	.main-header a{
 		padding: 15px 10px;
 	}
-}*/
-
-@media screen and (max-width:700px) {
-	.main-header a{
-		padding: 20px 15px;
-	}
 	.login::before {
-		top: 23px;
+    top: 18px;
 	}
+	.main-header.page .mobi-hover .icon {
+    top: 10px;
+	}
+	.block-inner {
+		padding-top: 80px
+	}
+	/*.block-inner h2 {
+		text-align: center;
+	}*/
 }
 
 @media screen and (max-width:680px){
@@ -896,9 +1174,6 @@ img{
 	.main-header a{
 		padding: 15px 10px;
 	}
-	.login::before {
-		top: 18px;
-	}
 	.main-block {
 		margin-top: 10px;
 		padding-top: 10px;
@@ -913,5 +1188,243 @@ img{
 	.main-content-right p{
 		line-height: 1.2;
 		margin-bottom: 10px;
+	}
+
+	.block-left, .block-right {
+    width: 100%;
+    padding-left: 10%;
+		padding-right: 10%;
+	}
+	.toggle {
+		display: none;
+	}
+	.block-left ul li {
+    padding: 5px 0 0 30px;
+	}
+	.block-right table {
+    border-collapse: collapse;
+	}
+	.list-description {
+		padding-left: 5px;
+	}
+}
+
+@media screen and (max-width:590px) {
+	.main-header .hidden-menu {
+		display: block;
+	}
+	.main-header .main-navigation {
+		display: none;
+	}
+	.main-logo {
+    padding-top: 25vh;
+    height: calc(75vh - 50px);
+	}
+	.features {
+		flex-direction: column;
+	}
+	.features-item {
+    width: 90%;
+    margin: 20px 5%;
+	}
+	.features-item p {
+		font-size: 13px;
+		padding: 5px 40px;
+		font-weight: 600;
+	}
+	.main-content {
+		flex-wrap: wrap;
+	}
+	.main-content-left, .main-content-right {
+		width: 100%;
+		text-align: center;
+	}
+	.main-content-left {
+		margin-bottom: 20px;
+	}
+	.main-content-left .btn, .main-content-left .btn-map {
+		margin: 5px auto;
+	}
+	.main-content-title {
+    font-size: 27px;
+    line-height: 35px;
+    margin-bottom: 20px;
+	}
+	.main-content p {
+		font-size: 14px;
+		line-height: 22px;
+		margin-bottom: 10px;
+		padding: 5px 10%;
+	}
+	.main-content-right .enroll-form {
+		margin: 0 15%;
+	}
+	.footer {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	.social-btn {
+		margin-top: 0
+	}
+	.footer-copyright {
+		justify-content: center;
+	}
+	.footer-copyright .executor {
+    width: 110px;
+    margin-left: 10px;
+	}
+	.footer-copyright .btn {
+		margin-top: 0;
+		margin-right: 10px;
+	}
+	.main-footer > .centerfix {
+		padding-bottom: 0
+	}
+	.catalog-item .item {
+		width: 90%;
+		margin-left: 5%;
+	}
+
+}
+
+@media screen and (max-width:506px) {
+	.modal-content {
+    top: 120px;
+    left: 5%;
+		margin-left: 0;
+		max-width: 460px;
+    width: 90%;
+    padding: 10%;
+		box-sizing: border-box;
+	}
+	.modal-content .login-form {
+		margin-top: 15px
+	}
+	.login-form input[type="text"], .login-form input[type="password"] {
+		width: 80%;
+	}
+	.catalog {
+		flex-wrap: wrap;
+	}
+	aside {
+    width: 100%;
+	}
+	aside .shop-filters {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.catalog-item {
+		width: 100%;
+	}
+	.catalog-item .item {
+		box-shadow: 0 5px 32px 2px #a8a8a8;
+		transition: transform 0.5s ease;
+	}
+	.catalog-item .item:hover {
+		box-shadow: 0 0 8px 5px #c1bfbd;
+		transform: scale(1.05);
+	}
+	.paginator {
+		width: 90%;
+    margin-left: 5%;
+    text-align: center;
+	}
+
+}
+@media screen and (max-width:480px) {
+	.features-item {
+    width: 100%;
+    margin: 20px 0;
+	}
+	.main-content {
+		padding: 5%
+	}
+	.main-content p {
+		margin: 5px 5%;
+	}
+	.main-content-right .enroll-form {
+    margin: 10px 5%;
+	}
+	.big-heading h2 {
+		font-size: 33px;
+		line-height: 33px;
+	}
+	.inform {
+		flex-direction: column;
+	}
+	.inform p {
+		text-align: center;
+		margin: 0 0 5px
+	}
+}
+
+@media screen and (max-width:450px) {
+	aside .shop-filters ul li {
+		margin-bottom: 2px;
+	}
+	aside .shop-filters legend {
+		margin-bottom: 0
+	}
+	aside .shop-filters fieldset {
+		width: 90%;
+		padding-left: 5%;
+	}
+	fieldset .btn {
+		margin-top: -10px;
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width:400px) {
+	body.inner {
+		margin: 0
+	}
+	.main-logo {
+		width: 100%;
+	}
+	.modal-content {
+    left: 2%;
+    width: 96%;
+    padding: 10%;
+	}
+	.modal-content .login-form {
+		margin-top: 10px
+	}
+	.login-form input[type="text"], .login-form input[type="password"] {
+		width: 80%;
+	}
+	.big-heading h2 {
+		padding: 0
+	}
+	.block-left, .block-right {
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+}
+
+@media screen and (max-width:365px) {
+	.hidden-menu .drop-menu {
+		width: calc(110% + 30px);
+	}
+	.main-content p {
+		margin: 5px 0;
+	}
+	.main-content-right .enroll-form {
+    margin: 0;
+	}
+}
+
+@media screen and (max-width:350px) {
+	.main-header.page .mobi-hover {
+	  margin-left: -25px;
+	}
+	.hidden-menu .drop-menu {
+		width: calc(110% + 70px);
+		margin-left: -15%;
+	}
+	.main-logo {
+		height: 75vh
 	}
 }

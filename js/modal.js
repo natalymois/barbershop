@@ -3,18 +3,24 @@ $(function(){
    /*-----При клике на блок входа всплывает модальное окно личного кабинета----*/
   
    $('.user-block').click(function(event){
-	  $('.modal-content').slideToggle(1000);
+	  $('.modal-content').slideToggle(500);
    });
   
    $('.modal-content-close').click(function(e){
 	  $('.modal-content').css('display','none');
    });
-   
+    
+   /*$(document).click( function(event){
+      if( $(event.target).closest(".modal-content").length ) 
+        return;
+      $(".modal-content").fadeOut("slow");
+      event.stopPropagation();
+    });*/
    /*---- Второе модальное окно: карта ----*/
    /*Клик на ссылку в футере*/
    $('.footer-contacts a').click(function(event){
 	   event.preventDefault();
-	  $('.modal-content-map').slideToggle(1000);
+	  $('.modal-content-map').slideToggle(500);
    });
    
    $('.modal-content-close').click(function(e){
@@ -25,7 +31,7 @@ $(function(){
    
    $('.main-content-left .btn-map').click(function(event){
 	  event.preventDefault();
-	  $('.modal-content-map').slideToggle(1000);
+	  $('.modal-content-map').slideToggle(500);
    });
    
    $('.modal-content-close').click(function(e){

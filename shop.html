@@ -7,19 +7,41 @@
   <link rel="stylesheet" href="css/style.css"/>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
   <title>Барбершоп магазин</title>
-  <script src="js/jquery.js" type="text/javascript"></script>
-  <script src="js/modal.js" type="text/javascript"></script>
 </head>
 
 <body class="inner">
-  <header class="main-header">
+  <header class="main-header page">
     <div class="centerfix">
-      <a href="index.html"><img src="img/logo.png" alt="главная"></a>
+      <div class="logo_header">
+        <a href="index.html"><img src="img/logo.png" alt="Главная"></a>
+      </div>
+      <div class="hidden-menu">
+          <a class="mobi-hover" href="javascript:void(0);" onclick="myFunction()">
+            <div class="icon"><span></span></div>
+          </a>
+          <ul class="drop-menu">
+            <li class="media-li">
+              <a href="#">Информация</a>
+            </li>
+            <li class="media-li">
+              <a href="#">Новости</a>
+            </li>
+            <li class="media-li">
+              <a href="price-list.html">Прайс-лист</a>
+            </li>
+            <li class="media-li">
+              <a href="shop.html">Магазин</a>
+            </li>
+            <li class="media-li">
+              <a href="#">Контакты</a>
+            </li>
+          </ul>
+      </div>
       <nav class="main-navigation">
         <ul>
           <li><a href="#">Информация</a></li>
           <li><a href="#">Новости</a></li>
-          <li><a href="price-list.html ">Прайс-лист</a></li>
+          <li><a href="price-list.html">Прайс-лист</a></li>
           <li><a class="current" href="#">Магазин</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
@@ -40,7 +62,7 @@
     	</ul>
     <div class="catalog">
       <aside>
-        <form action="" class="shop-filters">
+        <form action="#" class="shop-filters">
           <fieldset>
             <legend>ПРОИЗВОДИТЕЛИ</legend>
             <ul>
@@ -104,71 +126,72 @@
                   </label>
               </li>
             </ul>
+            <button type="submit" class="btn">Показать</button>
           </fieldset>
-          <button type="submit" href="#" class="btn">Показать</button>
+
         </form>
       </aside>
       <div class="catalog-item">
-        <article class="item">
+        <div class="item">
           <a href="item.html"><img src="img/item-1.jpg" alt="Baxter of California">
-            <span class="category">Набор для путешествий</span><br>
-            <span>"Baxter of California"</span>
+            <p><span class="category">Набор для путешествий</span><br>
+            <span>"Baxter of California"</span></p>
           </a>
           <div class="price-block">
             <div class="price">2900&nbsp;руб.</div>
             <button class="btn">Купить</button>
           </div>
-        </article>
-        <article class="item">
+        </div>
+        <div class="item">
           <a href="item.html"><img src="img/item-2.jpg" alt="Baxter of California">
-            <span class="category">Увлажняющий кондиционер</span><br>
-            <span class="title">Baxter of California</span>
+            <p><span class="category">Увлажняющий кондиционер</span><br>
+            <span class="title">Baxter of California</span></p>
           </a>
           <div class="price-block">
             <div class="price">750&nbsp;руб.</div>
             <button class="btn">Купить</button>
           </div>
-        </article>
-        <article class="item">
+        </div>
+        <div class="item">
           <a href="item.html"><img src="img/item-3.jpg" alt="Baxter of California">
-            <span class="category">Гель для волос</span><br>
-            <span>Suavecito</span>
+            <p><span class="category">Гель для волос</span><br>
+            <span>Suavecito</span></p>
           </a>
           <div class="price-block">
             <div class="price">290&nbsp;руб.</div>
             <button class="btn">Купить</button>
           </div>
-        </article>
-        <article class="item">
+        </div>
+        <div class="item">
           <a href="item.html"><img src="img/item-4.jpg" alt="Baxter of California">
-            <span class="category">Глина для укладки волос</span><br>
-            <span>American crew</span>
+            <p><span class="category">Глина для укладки волос</span><br>
+            <span>American crew</span></p>
             </a>
           <div class="price-block">
             <div class="price">500&nbsp;руб.</div>
             <button class="btn">Купить</button>
           </div>
-        </article>
-        <article class="item">
+        </div>
+        <div class="item">
           <a href="item.html"><img src="img/item-5.jpg" alt="Baxter of California">
-            <span class="category">Гель для волос</span><br>
-            <span>American crew</span>
+            <p><span class="category">Гель для волос</span><br>
+            <span>American crew</span></p>
           </a>
           <div class="price-block">
             <div class="price">300&nbsp;руб.</div>
             <button class="btn">Купить</button>
           </div>
-        </article>
-        <article class="item">
+        </div>
+        <div class="item">
           <a href="item.html"><img src="img/item-6.jpg" alt="Baxter of California">
-            <span class="category">Набор для бритья</span><br>
-            <span>Baxter of California</span>
+            <p><span class="category">Набор для бритья</span><br>
+            <span>Baxter of California</span></p>
           </a>
           <div class="price-block">
             <div class="price">3900&nbsp;руб.</div>
             <button class="btn">Купить</button>
           </div>
-        </article>
+        </div>
         <div class="paginator">
           <a href="#">1</a>
           <a class="current" href="#">2</a>
@@ -183,19 +206,19 @@
   <!--подвал-->
   <footer class="main-footer">
     <div class="centerfix">
-      <section class="footer-contacts">
+      <div class="footer footer-contacts">
         Барбершоп «Бородинский»<br>
         Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
         <a href="#">Как нас найти?</a><br>
         Телефон: +7 (812) 666-02-66
-      </section>
-      <section class="footer-social">
+      </div>
+      <div class="footer footer-social">
         <p>Давайте дружить!</p>
         <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
         <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
         <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
-      </section>
-      <section class="footer-copyright">
+      </div>
+      <div class="footer footer-copyright">
         <div class="creator">
           <p>Разработано:</p>
           <a class="btn" href="https://htmlacademy.ru">HTML Academy</a></div>
@@ -203,7 +226,7 @@
           <p>Сверстано:</p>
           <a class="btn" href="https://github.com/natalymois" target="_blank">Natalia Moiseeva</a>
         </div>
-      </section>
+      </div>
     </div>
   </footer>
   <!-- Всплывающая форма -->
@@ -211,7 +234,7 @@
       <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
       <h2 class="modal-content-title">Личный кабинет</h2>
       <p>Введите, пожалуйста, свой логин и пароль.</p>
-      <form class="login-form" action="" method="post">
+      <form class="login-form" action="#" method="post">
         <input class="icon-user" type="text" name="login" placeholder="Логин">
         <input class="icon-password" type="password"  name="password" placeholder="Пароль">
         <label class="login-checkbox">
@@ -225,7 +248,11 @@
     </div>
     <div class="modal-content-map">
       <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
-      <div id="yandex-map"></div>
+      <!-- <div id="yandex-map"></div> -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.597501986674!2d30.32130951580522!3d59.938820769046366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310e354288bb%3A0xbbeecda9980bbc58!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE4LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0KDQvtGB0YHQuNGPLCAxOTExODY!5e0!3m2!1sru!2sua!4v1520010875775" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/drop.js"></script>
 </body>
 </html>
