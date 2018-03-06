@@ -9,9 +9,12 @@ body {
 	font-size: 14px;
 	line-height: 24px;
 	min-height:100%;
+	margin: 0;
+	padding: 0;
 }
 .inner {
 	background: #f8f5f2 url("../img/bg-pattern.jpg");
+	margin: 0;
 }
 ul {
 	list-style-type: none;
@@ -84,7 +87,6 @@ img{
 	/*---медиа-меню---*/
 	.hidden-menu {
 		width: calc(100% - 150px);
-		position: relative;
 		display: none;
 	  padding-left: 40px;
 	  text-decoration: none;
@@ -148,11 +150,13 @@ img{
 			}
 	.hidden-menu .drop-menu {
 		flex-wrap: wrap;
-		width: calc(100% + 30px);
+		width: 80%;
     position: absolute;
     font-weight: 400;
     top: 100%;
-    left: 40px;
+    left: 10%;
+		margin: 0;
+		padding: 0;
     list-style: none;
     transform: rotateX(90deg);
     transform-origin: left;
@@ -216,7 +220,11 @@ img{
 		.main-navigation ul {
 			font-weight: 600;
 			padding-left: 0;
-
+			margin: 0;
+    	padding-bottom: 5px;
+		}
+		.main-navigation a {
+			padding: 30px 20px 20px;
 		}
 			.main-navigation ul .current {
 				border-bottom: 5px solid #fff;
@@ -1085,7 +1093,7 @@ img{
 
 @media screen and (max-width:840px) {
 	.main-header.page li a{
-		padding: 18px 10px 12px;
+    padding: 25px 10px 0;
 	}
 	.main-header.page .login {
 		padding-left: 50px;
@@ -1102,7 +1110,8 @@ img{
 		line-height: 26px;
 	}
 	.main-header.page .hidden-menu {
-		display: block;
+		display: block;width: 100px;
+		order: -1
 	}
 	.main-header.page .main-navigation {
 		display: none;
@@ -1217,8 +1226,7 @@ img{
 		display: none;
 	}
 	.main-logo {
-    padding-top: 25vh;
-    height: calc(75vh - 50px);
+    padding-top: 20vh;
 	}
 	.features {
 		flex-direction: column;
@@ -1405,9 +1413,7 @@ img{
 }
 
 @media screen and (max-width:365px) {
-	.hidden-menu .drop-menu {
-		width: calc(110% + 30px);
-	}
+
 	.main-content p {
 		margin: 5px 0;
 	}
@@ -1420,11 +1426,8 @@ img{
 	.main-header.page .mobi-hover {
 	  margin-left: -25px;
 	}
-	.hidden-menu .drop-menu {
-		width: calc(110% + 70px);
-		margin-left: -15%;
-	}
+
 	.main-logo {
-		height: 75vh
+		padding-top: 0;
 	}
 }
