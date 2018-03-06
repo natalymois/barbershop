@@ -3,7 +3,7 @@ html {
 }
 body {
 	font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-	background: #070707 url("../img/body.webp") no-repeat center top;
+	background: #070707 url("../img/body.jpg") no-repeat center top;
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -360,13 +360,13 @@ img{
 					z-index: 2;
 				}
 			.gallery-content 	.slide:nth-of-type(1) {
-				background: transparent url('../img/photo-1.webp');
+				background: transparent url('../img/photo-1.jpg');
 			}
 			.gallery-content 	.slide:nth-of-type(2) {
-				background: transparent url('../img/photo-2.webp');
+				background: transparent url('../img/photo-2.jpg');
 			}
 			.gallery-content 	.slide:nth-of-type(3) {
-				background: transparent url('../img/photo-3.webp');
+				background: transparent url('../img/photo-3.jpg');
 			}
 				.gallery-content img {
 					object-fit: cover;
