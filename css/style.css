@@ -1392,6 +1392,18 @@ img{
 	.main-logo {
 		width: 100%;
 	}
+	.main-header.page .hidden-menu {
+    width: 70px;
+	}
+	.main-header.page .mobi-hover {
+    margin-left: 5%;
+	}
+	.user-block {
+    width: 80px;
+	}
+	.main-header.page .login {
+    padding-left: 40px;
+	}
 	.modal-content {
     left: 2%;
     width: 96%;
@@ -1423,10 +1435,6 @@ img{
 }
 
 @media screen and (max-width:350px) {
-	.main-header.page .mobi-hover {
-	  margin-left: -25px;
-	}
-
 	.main-logo {
 		padding-top: 0;
 	}
