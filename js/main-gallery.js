@@ -2,7 +2,7 @@ var controls = document.querySelectorAll('#block-gallery .btn');
 
 var slides = document.querySelectorAll('.gallery-content .slide');
 var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,2000);
+var slideInterval = setInterval(nextSlide,3000);
 
 function nextSlide(){
 	goToSlide(currentSlide+1);
@@ -31,7 +31,7 @@ function pauseSlideshow(){
 
 function playSlideshow(){
 	playing = true;
-	slideInterval = setInterval(nextSlide,2000);
+	slideInterval = setInterval(nextSlide,3000);
 }
 
 // Остановка слайдера по ховеру
