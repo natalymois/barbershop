@@ -180,6 +180,7 @@ img{
     box-shadow: 1px 1px #fff;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+		box-sizing: border-box;
 	}
 	.main-header.page .drop-menu li {
 		background-color: #4e4d4d;
@@ -193,7 +194,7 @@ img{
 		padding: 8px 30px;
 	}
 	.drop-menu li:hover {
-		color: #fff;
+		box-shadow: 0 2px 3px #000;
 	}
 	.main-header.page .drop-menu li:hover a {
 		background: #f8f4f1;
@@ -1089,9 +1090,41 @@ img{
 						-webkit-transform: rotate(45deg);
 										transform: rotate(45deg);
 					}
+	.upbutton {
+		display: none;
+		position: fixed;
+		height: 26px;
+		width: 70px;
+		bottom: 30px;
+		right: 30px;
+		padding-top: 2px;
+		padding-right: 5px;
+		font-size: 16px;
+		color: #000;
+		text-align: right;
+		background: #f7f3f0;
+		border: 1px solid #000;
+		border-radius: 1px;
+		z-index: 99;
+	}
+
+	.upbutton::before {
+		display: block;
+		content: "\25b2";
+		position: absolute;
+		top: 1px;
+		left: 1px;
+		font-size: 20px;
+		font-weight: bold;
+		color:rgba(0,0,0,0.9);
+	}
+	.upbutton:hover::before {
+		color: #fff
+	}
 
 
 
+   /*--  медиа-запросы  --*/
 @media screen and (max-width:840px) {
 	.main-header.page li a{
     padding: 25px 10px 0;
@@ -1383,6 +1416,13 @@ img{
 	fieldset .btn {
 		margin-top: -10px;
 		margin-bottom: 20px;
+	}
+	.upbutton {
+		width: 26px;
+		font-size: 0
+	}
+	.upbutton::before {
+		left: 5px;
 	}
 }
 
